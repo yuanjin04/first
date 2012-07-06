@@ -1,2 +1,16 @@
-h1= title
-p Welcome to #{title}
+form(method="post",action="login")
+    p页面名称：
+        input(type="text",name="page-name")
+    p页面线上地址：
+        input(type="text",name="online")
+    p页面TMS地址：
+        input(type="text",name="tms")
+    p设计师：
+        input(type="text",name="design")
+    p需求：
+        input(type="text",name="xuqiu")
+    p完成时间：
+        input(type="text",name="complete")
+    p
+        input(type="submit",value="Submit")
+

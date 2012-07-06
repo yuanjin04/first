@@ -17,6 +17,7 @@ app.configure(function(){
   app.use(express.methodOverride());
   app.use(app.router);
   app.use(express.static(__dirname + '/public'));
+//  app.use(express.static(__dirname + '/assets'));
 });
 
 app.configure('development', function(){
@@ -26,14 +27,13 @@ app.configure('development', function(){
 app.configure('production', function(){
   app.use(express.errorHandler());
 });
-
-// Routes
-
+/*添加路由*/
 app.get('/', routes.index);
-app.get('/abcde', function(req,res){
-    res.end('sadfasdfasdfdfd')
-});
+app.post('/login', routes.login);
 
-app.listen(3000, function(){
+/*app.get('/news',routes.news);*/
+
+
+app.listen(80, function(){
   console.log("Express server listening on port %d in %s mode", app.address().port, app.settings.env);
 });
